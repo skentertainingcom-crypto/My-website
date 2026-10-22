@@ -1,14 +1,9 @@
 {
   "name": "My Website",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "image": "mcr.microsoft.com/devcontainers/python:3",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": { "label": "Website", "onAutoForward": "openBrowser" }
   },
-  "postAttachCommand": "python3 -m http.server 3000",
-  "customizations": {
-    "vscode": {
-      "extensions": ["ritwickdey.LiveServer"]
-    }
-  }
+  "postAttachCommand": "bash -c 'if ! (echo > /dev/tcp/127.0.0.1/3000) 2>/dev/null; then nohup python3 -m http.server 3000 > /tmp/site-server.log 2>&1 & fi'"
 }
