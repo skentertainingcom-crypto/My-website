@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Codespace Site</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .card {
+      max-width: 420px;
+      width: 100%;
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 8px; }
+    p { color: #94a3b8; margin-bottom: 20px; }
+    button {
+      background: #6366f1;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:active { transform: scale(0.97); }
+    #count { margin-top: 16px; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>It works! 🎉</h1>
+    <p>Built entirely from my phone using GitHub Codespaces.</p>
+    <button id="btn">Tap me</button>
+    <div id="count">Taps: 0</div>
+  </div>
+
+  <script>
+    let taps = 0;
+    document.getElementById("btn").addEventListener("click", () => {
+      taps++;
+      document.getElementById("count").textContent = "Taps: " + taps;
+    });
+  </script>
+</body>
+</html>

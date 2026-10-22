@@ -1,0 +1,14 @@
+{
+  "name": "My Website",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "Website", "onAutoForward": "openBrowser" }
+  },
+  "postAttachCommand": "python3 -m http.server 3000",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ritwickdey.LiveServer"]
+    }
+  }
+}
